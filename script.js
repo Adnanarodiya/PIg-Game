@@ -41,7 +41,7 @@ const init = () => {
 
   diceEl.classList.add('hidden');
   player0El.classList.remove('player--winner');
-  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
 };
@@ -76,7 +76,6 @@ btnHold.addEventListener('click', () => {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    switchPlayer();
     // 2. Check if player's score is >= 100
     if (scores[activePlayer] >= 10) {
       // Finish game
@@ -90,9 +89,6 @@ btnHold.addEventListener('click', () => {
     } else {
       switchPlayer();
     }
-
-    //Switch to next player
-    switchPlayer();
   }
 });
 
